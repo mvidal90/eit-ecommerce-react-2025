@@ -1,14 +1,12 @@
 import Container from '../components/container'
 import Text from '../components/Text'
-import ProductGrid from '../layout/ProductGrid'
 
-function Home() {
+function AboutUs() {
     return (
         <Container as="main">
-            <Text as="h2">Productos</Text>
-            <ProductGrid />
+            <Text as="h2">Sobre nosotros</Text>
         </Container>
     )
 }
 
-export default Home
+export default AboutUs

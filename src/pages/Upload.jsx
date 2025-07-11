@@ -1,14 +1,13 @@
+import React from 'react'
 import Container from '../components/container'
 import Text from '../components/Text'
-import ProductGrid from '../layout/ProductGrid'
 
-function Home() {
+function Upload() {
     return (
         <Container as="main">
-            <Text as="h2">Productos</Text>
-            <ProductGrid />
+            <Text as="h2">Alta de productos</Text>
         </Container>
     )
 }
 
-export default Home
+export default Upload
