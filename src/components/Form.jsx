@@ -7,6 +7,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 function Form({
     inputsArray,
     values,
+    errors,
     onChange,
     onSubmit
 }) {
@@ -17,7 +18,14 @@ function Form({
                     ({name, label, type}) =>
                         <Box key={name} className="form__input-group">
                             <Text as='label' className="form__label" htmlFor={name}>{label}</Text>
-                            <input id={name} name={name} type={type} value={values[name]} onChange={onChange} className='form__input'/>
+                            <input 
+                                id={name} 
+                                name={name} 
+                                type={type} 
+                                value={values[name]} 
+                                onChange={onChange} 
+                                className={`form__input${ errors[name] ? " with-error" : ""}`}/>
+                            {errors[name] && <Text as="span" className="form__error">{errors[name]}</Text>}
                         </Box>
                 )
             }

@@ -27,6 +27,9 @@
             }
             &.with-error {
                 border-color: $danger-color;
+                &:focus-visible {
+                    outline-color: $danger-color;
+                }
             }
             &:focus-visible {
                 outline-color: $strong-secondary-color;

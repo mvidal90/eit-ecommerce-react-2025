@@ -8,3 +8,8 @@ export const getProducts = async () => {
     const resp = await axiosInstance.get("/market-products")
     return resp.data
 }
+
+export const postContact = async body => {
+    const resp = await axiosInstance.post("/contacts", body)
+    return resp.data
+}

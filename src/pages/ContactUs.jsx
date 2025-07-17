@@ -1,7 +1,9 @@
 import Container from "../components/container"
 import Form from "../components/Form"
 import Text from "../components/Text"
+
 import { useForm } from "../hooks/useForm"
+import { postContact } from "../utils/api"
 
 const inputsValidations = {
     name: {
@@ -27,20 +29,32 @@ const inputsValidations = {
 
 function ContactUs() {
 
-    const {values, onChange} = useForm({
+    const {values, onChange, errors} = useForm({
         name: "",
         email: "",
         subject: "",
         message: ""
     }, inputsValidations)
 
+    const handleSubmit = e => {
+        e.preventDefault()
+        if (Object.values(errors).every( val => !val )) {
+            postContact(values)
+                .then(() => alert("Mensaje enviado correctamente"))
+                .catch( err => console.error(err) )
+        } else {
+            console.log("Formulario inválido")
+        }
+    }
+
     return (
         <Container as="main">
             <Text as="h2">Contactanos</Text>
             <Form 
                 values={values}
+                errors={errors}
                 onChange={onChange}
-                onSubmit={() => {}}
+                onSubmit={handleSubmit}
                 inputsArray={[
                     {
                         name: "name",

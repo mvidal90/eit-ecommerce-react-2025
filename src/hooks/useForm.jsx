@@ -11,6 +11,8 @@ export const useForm = (initialValues, validations) => {
         })
         if (validations[target.name] && !validations[target.name].validation(target.value)) {
             setErrors({...errors, [target.name]: validations[target.name].errorText})
+        } else {
+            setErrors({...errors, [target.name]: undefined})
         }
     }
 
@@ -18,6 +20,7 @@ export const useForm = (initialValues, validations) => {
 
     return ({
         values,
+        errors,
         onChange,
         resetForm
     })
