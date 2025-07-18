@@ -1,3 +1,4 @@
+import Box from "../components/Box"
 import Container from "../components/container"
 import Form from "../components/Form"
 import Text from "../components/Text"
@@ -50,34 +51,38 @@ function ContactUs() {
     return (
         <Container as="main">
             <Text as="h2">Contactanos</Text>
-            <Form 
-                values={values}
-                errors={errors}
-                onChange={onChange}
-                onSubmit={handleSubmit}
-                inputsArray={[
-                    {
-                        name: "name",
-                        type: "text",
-                        label: "Nombre"
-                    },
-                    {
-                        name: "email",
-                        type: "email",
-                        label: "e-Mail"
-                    },
-                    {
-                        name: "subject",
-                        type: "text",
-                        label: "Asunto"
-                    },
-                    {
-                        name: "message",
-                        type: "text",
-                        label: "Mensaje"
-                    },
-                ]}
-            />
+            <Box className="grid">
+                <Box className="col-xs-12 col-md-6 col-lg-5 col-xl-4">
+                    <Form 
+                        values={values}
+                        errors={errors}
+                        onChange={onChange}
+                        onSubmit={handleSubmit}
+                        inputsArray={[
+                            {
+                                name: "name",
+                                type: "text",
+                                label: "Nombre"
+                            },
+                            {
+                                name: "email",
+                                type: "email",
+                                label: "e-Mail"
+                            },
+                            {
+                                name: "subject",
+                                type: "text",
+                                label: "Asunto"
+                            },
+                            {
+                                name: "message",
+                                type: "text",
+                                label: "Mensaje"
+                            },
+                        ]}
+                    />
+                </Box>
+            </Box>
         </Container>
     )
 }
