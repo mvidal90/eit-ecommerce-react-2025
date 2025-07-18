@@ -1,11 +1,13 @@
 import Box from './Box'
+import Counter from './Counter'
 import Text from './Text'
 
 function Card({
     image,
     name,
     shortDescription,
-    amount
+    amount,
+    ...props
 }) {
     return (
         <Box className="card">
@@ -16,6 +18,17 @@ function Card({
                     <Text>{shortDescription}</Text>
                 </Box>
                 <Box className="card__price">
+                    <Box className="d-flex justify-center w-100">
+                        <Counter 
+                            product={{
+                                image,
+                                name,
+                                shortDescription,
+                                amount,
+                                ...props
+                            }}
+                        />
+                    </Box>
                     <hr className="w-100"/>
                     <Text as='b'>{`$ ${amount}`}</Text>
                 </Box>
