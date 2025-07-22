@@ -1,6 +1,7 @@
 import { NavLink } from "react-router"
 
 import Box from "../components/Box"
+import Cart from "../components/Cart"
 import Container from "../components/container"
 import Text from "../components/Text"
 
@@ -19,6 +20,7 @@ function Header() {
                         <li><NavLink to="/about-us">Sobre Nosotros</NavLink></li>
                         <li><NavLink to="/upload">Alta</NavLink></li>
                         <li><NavLink to="/contact-us">Contactanos</NavLink></li>
+                        <li><Cart /></li>
                     </ul>
                 </Box>
             </Container>
