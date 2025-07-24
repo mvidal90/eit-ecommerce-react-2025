@@ -2,7 +2,7 @@ import { NavLink } from "react-router"
 
 import Box from "../components/Box"
 import Cart from "../components/Cart"
-import Container from "../components/container"
+import Container from "../components/Container"
 import Text from "../components/Text"
 
 import brandImage from "../assets/brand-image.png"

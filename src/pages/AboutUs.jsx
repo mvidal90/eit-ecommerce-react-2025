@@ -1,4 +1,4 @@
-import Container from '../components/container'
+import Container from '../components/Container'
 import Text from '../components/Text'
 
 function AboutUs() {

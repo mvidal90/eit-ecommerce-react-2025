@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Box from '../components/Box'
-import Container from '../components/container'
+import Container from '../components/Container'
 import Text from '../components/Text'
 import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
 

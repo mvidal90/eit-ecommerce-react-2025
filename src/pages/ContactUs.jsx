@@ -1,5 +1,5 @@
 import Box from "../components/Box"
-import Container from "../components/container"
+import Container from "../components/Container"
 import Form from "../components/Form"
 import Text from "../components/Text"
 

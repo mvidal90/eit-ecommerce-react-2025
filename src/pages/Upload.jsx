@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '../components/Box'
-import Container from '../components/container'
+import Container from '../components/Container'
 import Text from '../components/Text'
 import Form from '../components/Form'
 
