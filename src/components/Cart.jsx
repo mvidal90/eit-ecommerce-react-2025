@@ -14,6 +14,8 @@ function Cart() {
     const { cart, totalQuantity } = useContext(CartContext)
     const [showModal, setShowModal] = useState(false)
 
+    const totalAmount = cart.reduce( (acc, item) => acc + item.prod.amount * item.quantity, 0 )
+
     return (
         <>
             <Box className="cart__container" role="button" onClick={() => setShowModal(true)}>
@@ -34,6 +36,10 @@ function Cart() {
                             </Box>
                     )
                 }
+                <Box className="d-flex align-center space-between">
+                    <Text as='h4'>Total:</Text>
+                    <Text as='b'>{`$ ${totalAmount}`}</Text>
+                </Box>
             </Modal>
         </>
     )
