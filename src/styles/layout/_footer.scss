@@ -5,10 +5,10 @@
     background-color: $light-primary-color;
     margin-top: 2rem;
     height: 64px;
-    // position: fixed;
-    // bottom: 0;
-    // width: 100%;
-    // z-index: 2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
     .footer__wrapp {
         display: flex;
         justify-content: space-between;

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShop, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 import { CartContext } from '../context/CartContext'
 
@@ -8,11 +8,13 @@ import Box from "./Box"
 import Text from "./Text"
 import Modal from './Modal'
 import Counter from './Counter'
+import { useNavigate } from 'react-router'
 
 function Cart() {
 
     const { cart, totalQuantity } = useContext(CartContext)
     const [showModal, setShowModal] = useState(false)
+    const navigate = useNavigate()
 
     const totalAmount = cart.reduce( (acc, item) => acc + item.prod.amount * item.quantity, 0 )
 
@@ -39,6 +41,17 @@ function Cart() {
                 <Box className="d-flex align-center space-between">
                     <Text as='h4'>Total:</Text>
                     <Text as='b'>{`$ ${totalAmount}`}</Text>
+                </Box>
+                <Box className="d-flex justify-end">
+                    <button 
+                        type="button"
+                        className="form__submit btn btn__primary"
+                        onClick={() => {
+                            navigate("/checkout")
+                            setShowModal(false)
+                        }}>
+                            <FontAwesomeIcon icon={faShop} />Comprar
+                    </button>
                 </Box>
             </Modal>
         </>
