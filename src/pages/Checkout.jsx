@@ -13,7 +13,6 @@ function Checkout() {
     const {cart} = useContext(CartContext)
 
     useEffect(() => {
-        console.log(cart)
         const itemsList = cart.map( ({prod, quantity}) =>({
             id: prod.id,
             title: prod.name,
